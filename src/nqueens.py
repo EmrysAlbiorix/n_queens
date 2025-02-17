@@ -4,7 +4,7 @@ def nqueens(n):
         return False
 
     # Checks if it is safe to place queen at given position
-    def is_safe(board, row, col):
+    def safe(board, row, col):
         # Check row to the left
         for i in range(col):
             if board[i] == row:
@@ -36,7 +36,7 @@ def nqueens(n):
 
         # Try placing queen in each row of the current column
         for row in range(n):
-            if is_safe(board, row, col):
+            if safe(board, row, col):
                 board[col] = row
 
                 # Recursive step
